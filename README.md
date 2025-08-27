@@ -14,3 +14,5 @@ An **interactive Streamlit dashboard** for exploring COVID-19 data across the gl
   - Choropleth map showing **CPI by country**
   - Table of **top 10 countries** by CPI
 - **Responsive and user-friendly design** using Streamlit and Plotly.
+
+WEB SITE : https://covid19-worldwide-dashboard.streamlit.app/
