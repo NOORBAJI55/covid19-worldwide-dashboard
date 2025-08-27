@@ -5,8 +5,9 @@ import plotly.express as px
 import datetime 
 
 # Load dataset
-# df = pd.read_csv("covid_worldwide_compact.csv")
 df = pd.read_csv("https://catalog.ourworldindata.org/garden/covid/latest/compact/compact.csv")
+
+# df = pd.read_csv("covid_worldwide_compact.csv")  # use this if u download the dataset
 
 # Drop rows with no country info
 df = df.dropna(subset=["country"])
