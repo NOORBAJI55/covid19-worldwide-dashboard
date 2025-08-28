@@ -91,13 +91,13 @@ st.plotly_chart(fig_cases, use_container_width=True)
 
 # 💉 Vaccination Progress
 st.subheader("💉 Vaccination Progress")
-fig_vax = px.area(filtered_df, x="date", y="people_fully_vaccinated_per_hundred", color="country",
+fig_vax = px.line(filtered_df, x="date", y="people_fully_vaccinated_per_hundred", color="country",
                   title="Vaccination Coverage (% of Population Fully Vaccinated)")
 st.plotly_chart(fig_vax, use_container_width=True)
 
 # ⚰️ Deaths Over Time
 st.subheader("⚰️ COVID-19 Deaths Over Time")
-fig_deaths = px.bar(filtered_df, x="date", y="total_deaths", color="country", title="Total Deaths Over Time")
+fig_deaths = px.line(filtered_df, x="date", y="total_deaths", color="country", title="Total Deaths Over Time")
 st.plotly_chart(fig_deaths, use_container_width=True)
 
 # 📊 Selected Countries CPI
