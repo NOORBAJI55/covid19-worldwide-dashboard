@@ -120,7 +120,20 @@ fig_cpi = px.choropleth(
 )
 st.plotly_chart(fig_cpi, use_container_width=True)
 
+# # 🏆 Top 10 Countries
+# st.subheader("🏆 Top 10 Countries by CPI")
+# top10 = latest_df.sort_values("CPI", ascending=False).head(10)[["country", "CPI"]]
+# st.table(top10)
 # 🏆 Top 10 Countries
 st.subheader("🏆 Top 10 Countries by CPI")
-top10 = latest_df.sort_values("CPI", ascending=False).head(10)[["country", "CPI"]]
+
+# Exclude aggregate regions
+exclude_list = ["World", "Asia", "Europe", "European Union (27)",
+                "High-income countries", "Upper-middle-income countries",
+                "Lower-middle-income countries", "Low-income countries"]
+
+filtered_cpi = latest_df[~latest_df["country"].isin(exclude_list)]
+
+top10 = filtered_cpi.sort_values("CPI", ascending=False).head(10)[["country", "CPI"]]
 st.table(top10)
+
