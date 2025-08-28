@@ -6,8 +6,6 @@ import datetime
 
 # Load dataset
 df = pd.read_csv("https://catalog.ourworldindata.org/garden/covid/latest/compact/compact.csv")
-# Keep only real countries (3-letter ISO codes)
-df = df[df["iso_code"].str.len() == 3]
 
 # df = pd.read_csv("covid_worldwide_compact.csv")  # use this if u download the dataset
 
