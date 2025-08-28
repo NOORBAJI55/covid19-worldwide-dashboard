@@ -10,6 +10,8 @@ import datetime
 # df = pd.read_csv("covid_worldwide_compact.csv")  # use this if u download the dataset
 
 df = pd.read_csv("covid_worldwide_compact.csv", sep=",", engine="python")
+st.write(df.columns.tolist())
+
 
 # Drop rows with no country info
 df = df.dropna(subset=["country"])
